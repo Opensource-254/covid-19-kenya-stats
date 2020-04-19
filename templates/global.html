@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block head %}
-<title>COVID-19 kenya stats</title>
+<title>COVID-19 kenya globe</title>
 {% endblock %}
 
 {% block body %}
@@ -15,7 +15,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Cases</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.cases}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.cases}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-hospital-o fa-3x" aria-hidden="true" style="color:rgb(0, 204, 255);"></i>
@@ -32,7 +32,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total recovery</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.recovered}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.recovered}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-heartbeat fa-3x" aria-hidden="true" style="color:green;"></i>
@@ -49,7 +49,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">total deaths</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.deaths}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.deaths}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-heart-o fa-3x" aria-hidden="true" style="color:red;"></i>
@@ -66,7 +66,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">active cases</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.active}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.active}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-hospital-o fa-3x" aria-hidden="true" style="color:#F9C404;"></i>
@@ -84,7 +84,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Today Cases</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.todayCases}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.todayCases}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-ambulance fa-3x" aria-hidden="true" style="color:green;"></i>
@@ -101,7 +101,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Today deaths</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.todayDeaths}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.todayDeaths}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-user-times fa-3x fa-fw" aria-hidden="true" style="color:red;"></i>
@@ -118,7 +118,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">cases Per One Million</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.casesPerOneMillion}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.casesPerOneMillion}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-hospital-o fa-3x" aria-hidden="true" style="color:#F9C404;"></i>
@@ -135,7 +135,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">critical cases</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.critical}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.critical}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-heartbeat fa-3x" aria-hidden="true" style="color:red;"></i>
@@ -154,7 +154,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Deaths Per One Million</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.deathsPerOneMillion}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.deathsPerOneMillion}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-heart-o fa-3x" aria-hidden="true" style="color:red;"></i>
@@ -171,7 +171,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total statistics</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.deathsPerOneMillion + stats.critical + stats.casesPerOneMillion + stats.todayDeaths + stats.todayCases + stats.active + stats.deaths + stats.recovered + stats.cases }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.deathsPerOneMillion + globe.critical + globe.casesPerOneMillion + globe.todayDeaths + globe.todayCases + globe.active + globe.deaths + globe.recovered + globe.cases }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-hourglass fa-3x fa-fw" aria-hidden="true" style="color:green;"></i>
@@ -190,7 +190,7 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">deaths Per One Million</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{stats.deathsPerOneMillion}}%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{globe.deathsPerOneMillion}}%</div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
@@ -213,7 +213,7 @@
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total tests</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.tests}}</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.tests}}</div>
                 </div>
                 <div class="col-auto">
                     <i class="fa fa-stethoscope fa-3x" aria-hidden="true" style="color:red;"></i>
@@ -231,7 +231,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">TESTS PER ONE MILLION</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.testsPerOneMillion}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.testsPerOneMillion}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-user-md fa-3x" aria-hidden="true" style="color:green;"></i>
@@ -248,7 +248,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Continent</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{stats.continent}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.continent}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-globe fa-3x" aria-hidden="true" style="color:red;"></i>
@@ -264,9 +264,8 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">country</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> <img src="{{stats.countryInfo.flag}}"
-                                alt="Kenya" height="80" width="150"></div>
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">affected countries</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{globe.affectedCountries}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-globe fa-3x" aria-hidden="true" style="color:#F9C404;"></i>
